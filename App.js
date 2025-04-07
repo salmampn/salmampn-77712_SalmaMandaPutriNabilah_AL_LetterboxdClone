@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -13,7 +13,6 @@ import DrawerNavigation from "./components/DrawerNavigation";
 
 const Stack = createNativeStackNavigator();
 
-// Main App with Stack Navigator
 export default function App() {
 	return (
 		<NavigationContainer>
@@ -24,6 +23,7 @@ export default function App() {
 			<Stack.Navigator
 				screenOptions={{
 					headerShadowVisible: false,
+					animation: "none",
 				}}
 			>
 				<Stack.Screen
@@ -54,6 +54,7 @@ export default function App() {
 					name='Searching'
 					component={Searching}
 					options={{
+						animation: "none",
 						headerShown: true,
 						headerStyle: { backgroundColor: "#2C343F" },
 						headerTintColor: "#fff",

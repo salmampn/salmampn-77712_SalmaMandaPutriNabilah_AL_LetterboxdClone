@@ -4,184 +4,66 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 
 const Tab = createMaterialTopTabNavigator();
 
+const TabScreen = ({ title }: { title: string }) => (
+	<View
+		style={{
+			flex: 1,
+			justifyContent: "center",
+			alignItems: "center",
+			backgroundColor: "#14171C",
+		}}
+	>
+		<Text>{title}</Text>
+	</View>
+);
+
 const Searching = () => {
+	const tabBarOptions = {
+		tabBarScrollEnabled: true,
+		tabBarPressColor: "#ffffff44",
+		tabBarPressOpacity: 0.8, // Ensures touch feedback
+		tabBarActiveTintColor: "#ffffff",
+		tabBarInactiveTintColor: "#ffffff",
+		tabBarLabelStyle: {
+			fontSize: 12,
+			letterSpacing: 3,
+			textTransform: "uppercase",
+			textAlign: "left",
+			alignSelf: "flex-start",
+		},
+		tabBarItemStyle: { width: "auto" },
+		tabBarStyle: { backgroundColor: "#14171C" },
+		tabBarIndicatorStyle: { backgroundColor: "#00E054", height: 3 },
+	};
+
+	const tabs = [
+		"FILMS",
+		"REVIEWS",
+		"LISTS",
+		"JOURNAL",
+		"CAST, CREW OR STUDIOS",
+		"MEMBERS OR HQS",
+		"STORIES",
+		"JOURNAL ARTICLES",
+		"PODCAST EPISODES",
+		"ALL",
+	];
+
 	return (
 		<Tab.Navigator
 			id='SearchTabNav'
 			initialRouteName='FILMS'
-			screenOptions={{
-				tabBarScrollEnabled: true,
-				tabBarPressColor: "#ffffff44",
-				tabBarActiveTintColor: "#ffffff",
-				tabBarInactiveTintColor: "#ffffff",
-				tabBarLabelStyle: {
-					fontSize: 12,
-					letterSpacing: 3,
-					textTransform: "uppercase",
-					textAlign: "left",
-					alignSelf: "flex-start",
-				},
-				tabBarItemStyle: {
-					width: "auto",
-				},
-				tabBarStyle: { backgroundColor: "#14171C" },
-				tabBarIndicatorStyle: {
-					backgroundColor: "#00E054",
-					height: 3,
-				},
-			}}
+			screenOptions={tabBarOptions}
 		>
-			<Tab.Screen
-				name='FILMS'
-				component={() => (
-					<View
-						style={{
-							flex: 1,
-							justifyContent: "center",
-							alignItems: "center",
-							backgroundColor: "#14171C",
-						}}
-					>
-						<Text>Films</Text>
-					</View>
-				)}
-			/>
-			<Tab.Screen
-				name='REVIEWS'
-				component={() => (
-					<View
-						style={{
-							flex: 1,
-							justifyContent: "center",
-							alignItems: "center",
-							backgroundColor: "#14171C",
-						}}
-					>
-						<Text>Reviews</Text>
-					</View>
-				)}
-			/>
-			<Tab.Screen
-				name='LISTS'
-				component={() => (
-					<View
-						style={{
-							flex: 1,
-							justifyContent: "center",
-							alignItems: "center",
-							backgroundColor: "#14171C",
-						}}
-					>
-						<Text>Lists</Text>
-					</View>
-				)}
-			/>
-			<Tab.Screen
-				name='JOURNAL'
-				component={() => (
-					<View
-						style={{
-							flex: 1,
-							justifyContent: "center",
-							alignItems: "center",
-							backgroundColor: "#14171C",
-						}}
-					>
-						<Text>Journal</Text>
-					</View>
-				)}
-			/>
-			<Tab.Screen
-				name='CAST, CREW OR STUDIOS'
-				component={() => (
-					<View
-						style={{
-							flex: 1,
-							justifyContent: "center",
-							alignItems: "center",
-							backgroundColor: "#14171C",
-						}}
-					>
-						<Text>Cast, Crew or Studios</Text>
-					</View>
-				)}
-			/>
-			<Tab.Screen
-				name='MEMBERS OR HQS'
-				component={() => (
-					<View
-						style={{
-							flex: 1,
-							justifyContent: "center",
-							alignItems: "center",
-							backgroundColor: "#14171C",
-						}}
-					>
-						<Text>Members or HQS</Text>
-					</View>
-				)}
-			/>
-			<Tab.Screen
-				name='STORIES'
-				component={() => (
-					<View
-						style={{
-							flex: 1,
-							justifyContent: "center",
-							alignItems: "center",
-							backgroundColor: "#14171C",
-						}}
-					>
-						<Text>Stories</Text>
-					</View>
-				)}
-			/>
-			<Tab.Screen
-				name='JOURNAL ARTICLES'
-				component={() => (
-					<View
-						style={{
-							flex: 1,
-							justifyContent: "center",
-							alignItems: "center",
-							backgroundColor: "#14171C",
-						}}
-					>
-						<Text>Journal Articles</Text>
-					</View>
-				)}
-			/>
-			<Tab.Screen
-				name='PODCAST EPISODES'
-				component={() => (
-					<View
-						style={{
-							flex: 1,
-							justifyContent: "center",
-							alignItems: "center",
-							backgroundColor: "#14171C",
-						}}
-					>
-						<Text>Podcast Episodes</Text>
-					</View>
-				)}
-			/>
-			<Tab.Screen
-				name='ALL'
-				component={() => (
-					<View
-						style={{
-							flex: 1,
-							justifyContent: "center",
-							alignItems: "center",
-							backgroundColor: "#14171C",
-						}}
-					>
-						<Text>All</Text>
-					</View>
-				)}
-			/>
+			{tabs.map((tab) => (
+				<Tab.Screen
+					key={tab}
+					name={tab}
+					component={() => <TabScreen title={tab} />}
+				/>
+			))}
 		</Tab.Navigator>
 	);
 };
+
 export default Searching;
