@@ -6,7 +6,6 @@ const MovieFriendScroll = ({ friends }) => {
 	const renderStars = (rating) => {
 		const fullStars = Math.floor(rating);
 		const hasHalfStar = rating % 1 !== 0;
-		const totalStars = hasHalfStar ? fullStars + 1 : fullStars;
 		const stars = [];
 
 		for (let i = 0; i < fullStars; i++) {
