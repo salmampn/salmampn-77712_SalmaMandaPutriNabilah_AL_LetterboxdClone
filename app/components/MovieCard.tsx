@@ -1,8 +1,8 @@
 import { View, Image, StyleSheet } from "react-native";
 
-const MovieCard = ({ imageSource }) => {
+const MovieCard = ({ imageSource, width = 125, height = 185 }) => {
 	return (
-		<View style={styles.card}>
+		<View style={[styles.card, { width, height }]}>
 			<Image
 				source={imageSource}
 				style={styles.poster}
@@ -16,8 +16,6 @@ export default MovieCard;
 
 const styles = StyleSheet.create({
 	card: {
-		width: 125,
-		height: 185,
 		margin: 2,
 		borderColor: "#445566",
 		borderWidth: 1,
