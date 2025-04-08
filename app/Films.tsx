@@ -1,42 +1,24 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import MovieScroll from "./components/Films/MovieScroll";
+import { View, Text } from "react-native";
 import MovieFriendScroll from "./components/Films/MovieFriendScroll";
 import { ScrollView } from "react-native-gesture-handler";
 import RootStyles from "../Style";
+import HeaderMovie from "./components/Films/HeaderMovie";
+import friends from "../data/FriendsRating";
 
 const Films = () => {
 	return (
 		<ScrollView
 			style={RootStyles.container}
-			contentContainerStyle={{
-				paddingBottom: 10,
-			}}
+			contentContainerStyle={{ paddingVertical: 8 }}
 		>
-			<Text style={RootStyles.headText}>Popular this week</Text>
-			<View style={{ marginBottom: 20 }}>
-				<MovieScroll />
-			</View>
-			<Text style={RootStyles.headText}>New from friends</Text>
-			<View style={{ marginBottom: 20 }}>
-				<MovieFriendScroll
-					friends={[
-						{
-							name: "Alex",
-							rating: 4.5,
-							likes: true,
-							rewatch: true,
-							review: true,
-						},
-						{ name: "Jenny", rating: 3 },
-						{ name: "Sam", rating: 5 },
-						{ name: "Taylor", rating: 2.5 },
-					]}
-				/>
-			</View>
-			<Text style={RootStyles.headText}>Popular with friends</Text>
-			<View style={{ marginBottom: 20 }}>
-				<MovieScroll />
+			<View style={{ flexDirection: "column", gap: 16 }}>
+				<HeaderMovie header='Popular this week' />
+				<View style={{ paddingLeft: 16 }}>
+					<Text style={RootStyles.headText}>New from friends</Text>
+					<MovieFriendScroll friends={friends} />
+				</View>
+				<HeaderMovie header='Popular with friends' />
 			</View>
 		</ScrollView>
 	);
