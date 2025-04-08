@@ -4,9 +4,9 @@ import { Star } from "lucide-react-native";
 
 const barHeights = [4, 8, 10, 20, 40, 60, 35, 15, 30, 15];
 
-const RatingGraph = () => {
+const RatingGraph = (style) => {
 	return (
-		<View style={styles.container}>
+		<View style={[styles.container, style]}>
 			{/* Left Star */}
 			<Star
 				size={12}

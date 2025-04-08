@@ -1,9 +1,11 @@
 import { View, Dimensions, StyleSheet } from "react-native";
 import MovieCard from "../MovieCard";
+import movies from "../../../data/movies";
+import favorites from "../../../data/favorites";
 
-const MovieProfile = () => {
+const ProfileFavorites = () => {
 	const screenWidth = Dimensions.get("window").width;
-	const containerPadding = 12;
+	const containerPadding = 4;
 	const containerWidth = screenWidth - containerPadding * 2;
 
 	const cardsPerRow = 4;
@@ -14,24 +16,20 @@ const MovieProfile = () => {
 	const cardWidth = availableWidth / cardsPerRow;
 	const cardHeight = (cardWidth / 90) * 130;
 
-	const movies = [
-		require("../../../assets/movie/lalaland.jpg"),
-		require("../../../assets/movie/lalaland.jpg"),
-		require("../../../assets/movie/lalaland.jpg"),
-		require("../../../assets/movie/lalaland.jpg"),
-	];
-
 	return (
 		<View style={[styles.container]}>
-			{movies.map((src, index) => (
-				<View key={index}>
+			{favorites.map((favorites, index) => {
+				const movie = movies.find((m) => m.key === favorites.movieKey);
+				return (
 					<MovieCard
-						imageSource={src}
+						key={index}
+						imageSource={movie?.src}
 						width={cardWidth}
 						height={cardHeight}
 					/>
-				</View>
-			))}
+				);
+			})}
+			;
 		</View>
 	);
 };
@@ -42,4 +40,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default MovieProfile;
+export default ProfileFavorites;

@@ -3,10 +3,12 @@ import MovieCard from "../MovieCard";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { RefreshCw, Text as LucideText } from "lucide-react-native";
 import renderStars from "../RenderStars";
+import movies from "../../../data/movies";
+import MyActivity from "../../../data/MyActivity";
 
-const MovieRatings = ({ stars, likes, rewatch, review }) => {
+const MovieRatings = () => {
 	const screenWidth = Dimensions.get("window").width;
-	const containerPadding = 12;
+	const containerPadding = 4;
 	const containerWidth = screenWidth - containerPadding * 2;
 
 	const cardsPerRow = 4;
@@ -17,52 +19,52 @@ const MovieRatings = ({ stars, likes, rewatch, review }) => {
 	const cardWidth = availableWidth / cardsPerRow;
 	const cardHeight = (cardWidth / 90) * 130;
 
-	const movieItems = [
-		{ stars: 4, likes: true, rewatch: true, review: true },
-		{ stars: 3, likes: true, rewatch: false, review: false },
-		{ stars: 5, likes: false, rewatch: true, review: true },
-		{ stars: 2, likes: false, rewatch: false, review: false },
-	];
-
 	return (
 		<View style={[styles.container]}>
-			{movieItems.map((item, index) => (
-				<View key={index}>
-					<View>
-						<MovieCard
-							imageSource={require("../../../assets/movie/lalaland.jpg")}
-							width={cardWidth}
-							height={cardHeight}
-						/>
-						<View style={styles.footer}>
-							<View style={styles.info}>
-								<View style={styles.iconRow}>
-									<View style={styles.stars}>{renderStars(item.stars)}</View>
-									{item.likes && (
-										<Icon
-											name='heart'
-											color='#F27405'
-											size={10}
-										/>
-									)}
-									{item.rewatch && (
-										<RefreshCw
-											color='gray'
-											size={10}
-										/>
-									)}
-									{item.review && (
-										<LucideText
-											color='white'
-											size={10}
-										/>
-									)}
+			{MyActivity.map((activity, index) => {
+				const movie = movies.find((m) => m.key === activity.movieKey);
+				return (
+					<View key={index}>
+						<View>
+							<MovieCard
+								key={index}
+								imageSource={movie?.src}
+								width={cardWidth}
+								height={cardHeight}
+							/>
+							<View style={styles.footer}>
+								<View style={styles.info}>
+									<View style={styles.iconRow}>
+										<View style={styles.stars}>
+											{renderStars(activity.stars)}
+										</View>
+										{activity.likes && (
+											<Icon
+												name='heart'
+												color='#F27405'
+												size={10}
+											/>
+										)}
+										{activity.rewatch && (
+											<RefreshCw
+												color='gray'
+												size={10}
+											/>
+										)}
+										{activity.review && (
+											<LucideText
+												color='white'
+												size={10}
+											/>
+										)}
+									</View>
 								</View>
 							</View>
 						</View>
 					</View>
-				</View>
-			))}
+				);
+			})}
+			;
 		</View>
 	);
 };

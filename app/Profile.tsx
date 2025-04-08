@@ -1,116 +1,101 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import RootStyles from "../Style";
 import Avatar from "./components/Avatar";
-import MovieProfile from "./components/Profile/MovieProfile";
+import ProfileFavorites from "./components/Profile/ProfileFavorites";
 import MovieRatings from "./components/Profile/MovieRatings";
-import { ScrollView } from "react-native";
 import RatingGraph from "./components/Profile/RatingGraph";
 import Statistics from "./components/Profile/Statistics";
+import profile from "../data/profile";
 
 const Profile = () => {
+	const user = profile[0];
+
 	return (
-		<>
-			<ScrollView
-				style={RootStyles.container}
-				contentContainerStyle={{ paddingBottom: 140 }}
-				showsVerticalScrollIndicator={false}
-			>
-				{/* Profile */}
-				<View
-					style={{
-						flexDirection: "column",
-						alignItems: "center",
-						justifyContent: "space-between",
-						gap: 16,
-						marginBottom: 16,
-					}}
-				>
-					<Avatar
-						width={90}
-						height={90}
-						borderRadius={60}
-						style={{ marginBottom: 10 }}
-					/>
-					<Text style={RootStyles.text}>tiramisu cake.</Text>
-					<View style={[RootStyles.divider, { marginTop: 16 }]} />
-				</View>
-				{/* Favorites */}
-				<View
-					style={{
-						flexDirection: "column",
-						gap: 16,
-						marginRight: 16,
-					}}
-				>
-					<Text
-						style={[
-							RootStyles.text,
-							{ letterSpacing: 1, fontSize: 12, paddingRight: 16 },
-						]}
-					>
-						FAVORITES
-					</Text>
-					<MovieProfile />
-				</View>
-				<View style={[RootStyles.divider, { marginTop: 16 }]} />
-				{/* Recent Activity */}
-				<View
-					style={{
-						flexDirection: "column",
-						gap: 16,
-						marginVertical: 16,
-						marginRight: 16,
-					}}
-				>
-					<Text
-						style={[
-							RootStyles.text,
-							{ letterSpacing: 1, fontSize: 12, paddingRight: 16 },
-						]}
-					>
-						RECENT ACTIVITY
-					</Text>
-					<View style={{ flexDirection: "row" }}>
-						<MovieRatings
-							likes={true}
-							rewatch={true}
-							review={true}
-							stars={4}
-						/>
-					</View>
-				</View>
-				<Text
-					style={[
-						RootStyles.text,
-						{ letterSpacing: 1, fontSize: 16, marginVertical: 8 },
-					]}
-				>
-					More activity
-				</Text>
-				<View style={[RootStyles.divider, { marginVertical: 16 }]} />
-				{/* Graph */}
-				<View style={{ marginRight: 16 }}>
-					<Text
-						style={[
-							RootStyles.text,
-							{
-								letterSpacing: 1,
-								fontSize: 12,
-								marginBottom: 16,
-							},
-						]}
-					>
-						RATINGS
-					</Text>
-					<RatingGraph />
-				</View>
-				<View style={[RootStyles.divider, { marginVertical: 24 }]} />
-				{/* Statistics */}
-				<View style={{ marginTop: 8 }}>
-					<Statistics />
-				</View>
-			</ScrollView>
-		</>
+		<ScrollView
+			style={RootStyles.container}
+			contentContainerStyle={styles.scrollContainer}
+			showsVerticalScrollIndicator
+		>
+			{/* Profile Header */}
+			<View style={styles.centeredSection}>
+				<Avatar
+					imageSource={user.pic}
+					width={90}
+					height={90}
+					borderRadius={60}
+					style={{ marginBottom: 10 }}
+				/>
+				<Text style={RootStyles.text}>{user.bio}</Text>
+				<View style={[RootStyles.divider, styles.sectionSpacing]} />
+			</View>
+
+			{/* Favorites */}
+			<View style={styles.section}>
+				<Text style={styles.sectionTitle}>FAVORITES</Text>
+				<ProfileFavorites />
+			</View>
+			<View style={[RootStyles.divider, styles.sectionSpacing]} />
+
+			{/* Recent Activity */}
+			<View style={styles.section}>
+				<Text style={styles.sectionTitle}>RECENT ACTIVITY</Text>
+				<MovieRatings />
+			</View>
+
+			<Text style={styles.moreActivityText}>More activity</Text>
+			<View style={[RootStyles.divider, styles.sectionSpacing]} />
+
+			{/* Rating Graph */}
+			<View style={styles.section}>
+				<Text style={styles.sectionTitle}>RATINGS</Text>
+				<RatingGraph style={styles.graphSpacing} />
+			</View>
+			<View style={[RootStyles.divider, styles.largeSpacing]} />
+
+			{/* Statistics */}
+			<Statistics />
+		</ScrollView>
 	);
 };
+
 export default Profile;
+
+const styles = StyleSheet.create({
+	scrollContainer: {
+		paddingTop: 16,
+		paddingBottom: 128,
+	},
+	centeredSection: {
+		alignItems: "center",
+		gap: 16,
+		marginBottom: 16,
+	},
+	section: {
+		flexDirection: "column",
+		gap: 16,
+		paddingHorizontal: 8,
+		marginBottom: 8,
+	},
+	sectionTitle: {
+		...RootStyles.text,
+		letterSpacing: 1,
+		fontSize: 12,
+		paddingRight: 16,
+	},
+	moreActivityText: {
+		...RootStyles.text,
+		letterSpacing: 1,
+		fontSize: 16,
+		marginVertical: 8,
+		paddingHorizontal: 8,
+	},
+	sectionSpacing: {
+		marginVertical: 16,
+	},
+	largeSpacing: {
+		marginVertical: 24,
+	},
+	graphSpacing: {
+		paddingHorizontal: 16,
+	},
+});

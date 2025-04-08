@@ -68,6 +68,7 @@ export default function App() {
 					name='Profile'
 					component={Profile}
 					options={({ navigation }) => ({
+						animation: "slide_from_bottom",
 						headerRight: () => (
 							<TouchableOpacity style={{ marginRight: 10 }}>
 								<EllipsisVertical

@@ -3,36 +3,79 @@ import { ScrollView, View, Text, StyleSheet } from "react-native";
 import RootStyles from "../Style";
 
 const SearchPage = () => {
+	const browseByOptions = [
+		"Release date",
+		"Genre, country or language",
+		"Service",
+		"Most popular",
+		"Highest rated",
+		"Most anticipated",
+		"Opening soon",
+	];
+
+	const letterboxdOptions = [
+		"Journal",
+		"Podcast",
+		"Showdown",
+		"Year in Review",
+		"About",
+		"Social",
+		"Gift Guide",
+		"Merch",
+		"Contact",
+	];
+
+	const renderSection = (title, options) => (
+		<View style={styles.section}>
+			<Text style={styles.sectionTitle}>{title}</Text>
+			{options.map((item, index) => (
+				<Text
+					key={index}
+					style={styles.itemText}
+				>
+					{item}
+				</Text>
+			))}
+		</View>
+	);
+
 	return (
-		<ScrollView style={RootStyles.container}>
-			<Text style={[styles.text, { fontSize: 13 }]}>BROWSE BY</Text>
-			<Text style={styles.text}>Release date</Text>
-			<Text style={styles.text}>Genre, country or language</Text>
-			<Text style={styles.text}>Service</Text>
-			<Text style={styles.text}>Most popular</Text>
-			<Text style={styles.text}>Highest rated</Text>
-			<Text style={styles.text}>Most anticipated</Text>
-			<Text style={styles.text}>Opening soon</Text>
-			<View style={[RootStyles.divider, { marginVertical: 16 }]} />
-			<Text style={[styles.text, { fontSize: 13 }]}>LETTERBOXD.COM</Text>
-			<Text style={styles.text}>Journal</Text>
-			<Text style={styles.text}>Podcast</Text>
-			<Text style={styles.text}>Showdown</Text>
-			<Text style={styles.text}>Year in Review</Text>
-			<Text style={styles.text}>About</Text>
-			<Text style={styles.text}>Social</Text>
-			<Text style={styles.text}>Gift Guide</Text>
-			<Text style={styles.text}>Merch</Text>
-			<Text style={styles.text}>Contact</Text>
+		<ScrollView
+			style={[RootStyles.container]}
+			contentContainerStyle={styles.scrollContainer}
+			showsVerticalScrollIndicator
+		>
+			{renderSection("BROWSE BY", browseByOptions)}
+			<View style={[RootStyles.divider, styles.divider]} />
+			{renderSection("LETTERBOXD.COM", letterboxdOptions)}
 		</ScrollView>
 	);
 };
+
 export default SearchPage;
 
 const styles = StyleSheet.create({
-	text: {
+	scrollContainer: {
+		paddingVertical: 16,
+		paddingHorizontal: 16,
+	},
+	section: {
+		marginBottom: 24,
+	},
+	sectionTitle: {
 		color: "#99AABB",
-		marginVertical: 10,
+		fontSize: 13,
+		fontWeight: "500",
+		marginBottom: 12,
+	},
+	itemText: {
+		color: "#99AABB",
 		fontSize: 16,
+		marginVertical: 8,
+		letterSpacing: 0.5,
+		fontWeight: "300",
+	},
+	divider: {
+		marginBottom: 24,
 	},
 });
