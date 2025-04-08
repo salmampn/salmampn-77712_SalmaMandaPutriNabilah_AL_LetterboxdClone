@@ -61,7 +61,7 @@ const CustomDrawerContent = (props) => {
 			</TouchableOpacity>
 			<TouchableOpacity
 				style={styles.drawerItem}
-				onPress={() => navigation.navigate("Search")}
+				onPress={() => navigation.navigate("Profile")}
 			>
 				<View style={{ flexDirection: "row", alignItems: "center" }}>
 					<UserRound
