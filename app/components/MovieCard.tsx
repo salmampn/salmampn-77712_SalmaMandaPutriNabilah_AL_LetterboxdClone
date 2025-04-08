@@ -16,7 +16,7 @@ export default MovieCard;
 
 const styles = StyleSheet.create({
 	card: {
-		margin: 2,
+		marginHorizontal: 2,
 		borderColor: "#445566",
 		borderWidth: 1,
 		overflow: "hidden",

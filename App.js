@@ -24,18 +24,20 @@ export default function App() {
 			<Stack.Navigator
 				screenOptions={{
 					headerShadowVisible: false,
-					animation: "none",
 				}}
 			>
 				<Stack.Screen
-					name='Drawer'
+					name=' '
 					component={DrawerNavigation}
-					options={{ headerShown: false }}
+					options={{
+						headerShown: false,
+					}}
 				/>
 				<Stack.Screen
 					name='Search'
 					component={SearchPage}
 					options={({ navigation }) => ({
+						animation: "slide_from_right",
 						headerRight: () => (
 							<TouchableOpacity
 								onPress={() => navigation.push("Searching")}
@@ -67,10 +69,7 @@ export default function App() {
 					component={Profile}
 					options={({ navigation }) => ({
 						headerRight: () => (
-							<TouchableOpacity
-								// onPress={() => navigation.push("Searching")}
-								style={{ marginRight: 10 }}
-							>
+							<TouchableOpacity style={{ marginRight: 10 }}>
 								<EllipsisVertical
 									size={24}
 									color='#ffffff'

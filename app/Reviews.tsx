@@ -10,17 +10,17 @@ const Reviews = () => {
 				paddingBottom: 10,
 			}}
 		>
-			<Text style={styles.headText}>New from friends</Text>
+			<Text style={RootStyles.headText}>New from friends</Text>
 			<FrontReview
 				title='La La Land'
 				year='2016'
 				name='Alex'
-				review='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+				review='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitations ullamco laboris nisi ut aliquip ex ea commodo consequat.'
 				stars={0}
 				likes={false}
 				rewatch={false}
 			/>
-			<Text style={styles.headText}>Popular with friends</Text>
+			<Text style={RootStyles.headText}>Popular with friends</Text>
 			<FrontReview
 				title='La La Land'
 				year='2016'
@@ -30,7 +30,7 @@ const Reviews = () => {
 				likes={true}
 				rewatch={true}
 			/>
-			<Text style={styles.headText}>Popular this week</Text>
+			<Text style={RootStyles.headText}>Popular this week</Text>
 			<FrontReview
 				title='La La Land'
 				year='2016'
@@ -44,12 +44,3 @@ const Reviews = () => {
 	);
 };
 export default Reviews;
-
-const styles = StyleSheet.create({
-	headText: {
-		color: "white",
-		fontWeight: "bold",
-		marginVertical: 14,
-		fontSize: 18,
-	},
-});

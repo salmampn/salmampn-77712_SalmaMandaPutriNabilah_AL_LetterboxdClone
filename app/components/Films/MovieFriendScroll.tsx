@@ -1,35 +1,12 @@
-import { View, Image, StyleSheet, Text, ScrollView } from "react-native";
+import { View, StyleSheet, Text, ScrollView } from "react-native";
 import MovieCard from "../MovieCard";
 import Icon from "react-native-vector-icons/FontAwesome";
+import { RefreshCw, Text as LucideText } from "lucide-react-native";
+import Avatar from "../Avatar";
+import RootStyles from "../../../Style";
+import renderStars from "../RenderStars";
 
 const MovieFriendScroll = ({ friends }) => {
-	const renderStars = (rating) => {
-		const fullStars = Math.floor(rating);
-		const hasHalfStar = rating % 1 !== 0;
-		const stars = [];
-
-		for (let i = 0; i < fullStars; i++) {
-			stars.push(
-				<Icon
-					key={`full-${i}`}
-					name='star'
-					color='white'
-				/>
-			);
-		}
-
-		if (hasHalfStar) {
-			stars.push(
-				<Icon
-					key='half'
-					name='star-half'
-					color='white'
-				/>
-			);
-		}
-		return stars;
-	};
-
 	return (
 		<ScrollView
 			horizontal
@@ -45,13 +22,41 @@ const MovieFriendScroll = ({ friends }) => {
 						imageSource={require("../../../assets/movie/lalaland.jpg")}
 					/>
 					<View style={styles.footer}>
-						<Image
-							source={require("../../../assets/avatar.png")}
-							style={styles.avatar}
+						<Avatar
+							width={30}
+							height={30}
 						/>
 						<View style={styles.info}>
-							<Text style={styles.text}>{friend.name}</Text>
-							<View style={styles.stars}>{renderStars(friend.rating)}</View>
+							<Text style={RootStyles.text}>{friend.name}</Text>
+							<View
+								style={{
+									flexDirection: "row",
+									alignItems: "center",
+									gap: 4,
+									marginTop: 2,
+								}}
+							>
+								<View style={styles.stars}>{renderStars(friend.rating)}</View>
+								{friend.likes && (
+									<Icon
+										name='heart'
+										color='#F27405'
+										size={10}
+									/>
+								)}
+								{friend.rewatch && (
+									<RefreshCw
+										color='gray'
+										size={10}
+									/>
+								)}
+								{friend.review && (
+									<LucideText
+										color='white'
+										size={10}
+									/>
+								)}
+							</View>
 						</View>
 					</View>
 				</View>
@@ -74,19 +79,9 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		marginTop: 6,
 	},
-	avatar: {
-		width: 30,
-		height: 30,
-		borderRadius: 15,
-		borderWidth: 1,
-		borderColor: "#445566",
-	},
 	info: {
 		marginLeft: 8,
 		flexDirection: "column",
-	},
-	text: {
-		color: "lightgrey",
 	},
 	stars: {
 		flexDirection: "row",
