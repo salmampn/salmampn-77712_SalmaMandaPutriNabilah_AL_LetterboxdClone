@@ -1,14 +1,11 @@
 import { Text, ScrollView, StyleSheet } from "react-native";
 import FrontReview from "./components/Reviews/FrontReview";
+import RootStyles from "../Style";
 
 const Reviews = () => {
 	return (
 		<ScrollView
-			style={{
-				flex: 1,
-				padding: 16,
-				backgroundColor: "#14181c",
-			}}
+			style={RootStyles.container}
 			contentContainerStyle={{
 				paddingBottom: 10,
 			}}

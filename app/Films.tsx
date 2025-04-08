@@ -3,15 +3,12 @@ import { View, Text, StyleSheet } from "react-native";
 import MovieScroll from "./components/Films/MovieScroll";
 import MovieFriendScroll from "./components/Films/MovieFriendScroll";
 import { ScrollView } from "react-native-gesture-handler";
+import RootStyles from "../Style";
 
 const Films = () => {
 	return (
 		<ScrollView
-			style={{
-				flex: 1,
-				padding: 16,
-				backgroundColor: "#14181c",
-			}}
+			style={RootStyles.container}
 			contentContainerStyle={{
 				paddingBottom: 10,
 			}}
