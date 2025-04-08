@@ -20,6 +20,7 @@ import {
 	LogOut,
 } from "lucide-react-native";
 import PopularTabs from "../app/components/Navigation/PopularTabs";
+import Avatar from "../app/components/Avatar";
 
 const Drawer = createDrawerNavigator();
 
@@ -29,14 +30,14 @@ const CustomDrawerContent = (props) => {
 
 	return (
 		<DrawerContentScrollView {...props}>
-			<View style={{ flexDirection: "row", alignItems: "center", gap: 16 }}>
-				<View style={styles.avatarContainer}>
-					<Image
-						source={require("../assets/avatar.png")}
-						alt='Profile Photo'
-						style={styles.avatar}
-					/>
-				</View>
+			<View
+				style={{
+					flexDirection: "row",
+					alignItems: "center",
+					gap: 16,
+				}}
+			>
+				<Avatar />
 				<View>
 					<Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold" }}>
 						sal
@@ -167,13 +168,21 @@ const DrawerNavigation = () => {
 			screenOptions={{
 				drawerStyle: {
 					backgroundColor: "#14181c",
-					width: "70%",
+					width: 255,
 				},
 				drawerActiveBackgroundColor: "#14181c",
 				drawerPressedBackgroundColor: "#2C343F",
 				drawerActiveTintColor: "#ffffff",
 				headerStyle: {
 					backgroundColor: "#2C343F",
+				},
+				headerTitleStyle: {
+					color: "#fff",
+					fontSize: 20,
+					fontWeight: "bold",
+				},
+				DrawerItemListStyle: {
+					backgroundColor: "#14181c",
 				},
 				headerTintColor: "#fff",
 				headerShadowVisible: false,
@@ -212,18 +221,6 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: "#14181c",
-	},
-	avatarContainer: {
-		alignItems: "center",
-		marginTop: 5,
-		marginBottom: 20,
-	},
-	avatar: {
-		width: 80,
-		height: 80,
-		borderRadius: 40,
-		borderWidth: 1,
-		borderColor: "#445566",
 	},
 	drawerItem: {
 		paddingVertical: 10,

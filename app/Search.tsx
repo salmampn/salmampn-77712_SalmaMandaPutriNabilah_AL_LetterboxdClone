@@ -13,14 +13,7 @@ const SearchPage = () => {
 			<Text style={styles.text}>Highest rated</Text>
 			<Text style={styles.text}>Most anticipated</Text>
 			<Text style={styles.text}>Opening soon</Text>
-			<View
-				style={{
-					height: 0.2,
-					opacity: 0.7,
-					backgroundColor: "#99AABB",
-					marginVertical: 16,
-				}}
-			/>
+			<View style={[RootStyles.divider, { marginVertical: 16 }]} />
 			<Text style={[styles.text, { fontSize: 13 }]}>LETTERBOXD.COM</Text>
 			<Text style={styles.text}>Journal</Text>
 			<Text style={styles.text}>Podcast</Text>
