@@ -7,12 +7,12 @@ import { ScrollView } from "react-native";
 import RatingGraph from "./components/Profile/RatingGraph";
 import Statistics from "./components/Profile/Statistics";
 
-const Profile = ({ bio }) => {
+const Profile = () => {
 	return (
 		<>
 			<ScrollView
 				style={RootStyles.container}
-				contentContainerStyle={{ paddingBottom: 100 }}
+				contentContainerStyle={{ paddingBottom: 140 }}
 				showsVerticalScrollIndicator={false}
 			>
 				{/* Profile */}
@@ -31,15 +31,15 @@ const Profile = ({ bio }) => {
 						borderRadius={60}
 						style={{ marginBottom: 10 }}
 					/>
-					{/* <Text>{bio}</Text> */}
 					<Text style={RootStyles.text}>tiramisu cake.</Text>
-					<View style={RootStyles.divider} />
+					<View style={[RootStyles.divider, { marginTop: 16 }]} />
 				</View>
 				{/* Favorites */}
 				<View
 					style={{
 						flexDirection: "column",
 						gap: 16,
+						marginRight: 16,
 					}}
 				>
 					<Text
@@ -51,14 +51,15 @@ const Profile = ({ bio }) => {
 						FAVORITES
 					</Text>
 					<MovieProfile />
-					<View style={RootStyles.divider} />
 				</View>
+				<View style={[RootStyles.divider, { marginTop: 16 }]} />
 				{/* Recent Activity */}
 				<View
 					style={{
 						flexDirection: "column",
 						gap: 16,
 						marginVertical: 16,
+						marginRight: 16,
 					}}
 				>
 					<Text
@@ -70,24 +71,6 @@ const Profile = ({ bio }) => {
 						RECENT ACTIVITY
 					</Text>
 					<View style={{ flexDirection: "row" }}>
-						<MovieRatings
-							likes={true}
-							rewatch={true}
-							review={true}
-							stars={4}
-						/>
-						<MovieRatings
-							likes={true}
-							rewatch={true}
-							review={true}
-							stars={4}
-						/>
-						<MovieRatings
-							likes={true}
-							rewatch={true}
-							review={true}
-							stars={4}
-						/>
 						<MovieRatings
 							likes={true}
 							rewatch={true}
@@ -106,11 +89,15 @@ const Profile = ({ bio }) => {
 				</Text>
 				<View style={[RootStyles.divider, { marginVertical: 16 }]} />
 				{/* Graph */}
-				<View>
+				<View style={{ marginRight: 16 }}>
 					<Text
 						style={[
 							RootStyles.text,
-							{ letterSpacing: 1, fontSize: 12, marginBottom: 8 },
+							{
+								letterSpacing: 1,
+								fontSize: 12,
+								marginBottom: 16,
+							},
 						]}
 					>
 						RATINGS

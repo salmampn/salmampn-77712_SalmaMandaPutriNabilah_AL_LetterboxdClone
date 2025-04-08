@@ -92,7 +92,18 @@ const Statistics = () => {
 				}}
 			>
 				<Text style={styles.text}>Stats</Text>
-				<Text style={styles.text}>Pro</Text>
+				<Text
+					style={{
+						backgroundColor: "#F27405",
+						color: "white",
+						paddingVertical: 2,
+						paddingHorizontal: 4,
+						borderRadius: 4,
+						fontSize: 12,
+					}}
+				>
+					PRO
+				</Text>
 			</View>
 		</View>
 	);

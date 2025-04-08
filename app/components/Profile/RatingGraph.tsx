@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
 	container: {
 		flexDirection: "row",
 		alignItems: "flex-end",
-		marginRight: 16,
 	},
 	star: {
 		marginRight: 4,
@@ -53,11 +52,12 @@ const styles = StyleSheet.create({
 	graph: {
 		flexDirection: "row",
 		alignItems: "flex-end",
-		justifyContent: "space-evenly",
 		flex: 1,
+		height: 100,
 	},
 	bar: {
-		width: 40,
+		flex: 1,
+		marginHorizontal: 0.5,
 		backgroundColor: "#3A4552",
 	},
 	rightStars: {
