@@ -12,7 +12,7 @@ const MovieFriendScroll = ({ FriendsRating }) => {
 		<ScrollView
 			horizontal
 			showsHorizontalScrollIndicator={false}
-			contentContainerStyle={styles.scrollContainer}
+			contentContainerStyle={[styles.scrollContainer, { marginBottom: 16 }]}
 		>
 			{FriendsRating.map((rating, index) => {
 				const movie = movies.find((m) => m.key === rating.movieKey);

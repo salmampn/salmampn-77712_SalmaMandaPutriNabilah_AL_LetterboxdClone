@@ -50,18 +50,10 @@ const Reviews = () => {
 	};
 
 	return (
-		<ScrollView
-			style={RootStyles.container}
-			contentContainerStyle={{ paddingVertical: 16 }}
-		>
+		<ScrollView style={RootStyles.container}>
 			{newFromFriends.length > 0 && (
 				<>
-					<Text
-						style={[
-							RootStyles.headText,
-							{ paddingHorizontal: 16, marginTop: 16 },
-						]}
-					>
+					<Text style={[RootStyles.headText, { paddingHorizontal: 16 }]}>
 						New from friends
 					</Text>
 					{renderReviews(newFromFriends, "friend")}

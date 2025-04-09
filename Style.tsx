@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native";
 
-const styles = StyleSheet.create({
+const RootStyles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: "#14181c",
+		paddingVertical: 16,
 	},
 	headText: {
 		color: "white",
@@ -27,4 +28,4 @@ const styles = StyleSheet.create({
 	},
 });
 
-export default styles;
+export default RootStyles;

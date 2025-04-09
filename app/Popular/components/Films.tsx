@@ -20,10 +20,7 @@ const EnhancedFriendsData = reviews
 
 const Films = () => {
 	return (
-		<ScrollView
-			style={RootStyles.container}
-			contentContainerStyle={{ paddingVertical: 8 }}
-		>
+		<ScrollView style={RootStyles.container}>
 			<View style={{ flexDirection: "column", gap: 16 }}>
 				<HeaderMovie header='Popular this week' />
 				<View style={{ paddingLeft: 16 }}>

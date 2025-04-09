@@ -1,8 +1,8 @@
-import { View, Text } from "react-native";
+import { ScrollView, Text } from "react-native";
 
 const Popular = () => {
 	return (
-		<View
+		<ScrollView
 			style={{
 				flex: 1,
 				justifyContent: "center",
@@ -11,7 +11,7 @@ const Popular = () => {
 			}}
 		>
 			<Text>Popular</Text>
-		</View>
+		</ScrollView>
 	);
 };
 export default Popular;
