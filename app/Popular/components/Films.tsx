@@ -6,6 +6,7 @@ import RootStyles from "../../../Style";
 import HeaderMovie from "./Films/HeaderMovie";
 import reviews from "../../../data/reviews";
 import profiles from "../../../data/profiles";
+import DiaryButton from "../../../components/DiaryButton";
 
 const EnhancedFriendsData = reviews
 	.filter((review) => review.friend)
@@ -20,21 +21,24 @@ const EnhancedFriendsData = reviews
 
 const Films = () => {
 	return (
-		<ScrollView
-			style={RootStyles.container}
-			contentContainerStyle={{ paddingBottom: 32 }}
-		>
-			<View style={{ flexDirection: "column", gap: 16 }}>
-				<HeaderMovie header='Popular this week' />
-				<View style={{ paddingLeft: 16 }}>
-					<Text style={[RootStyles.headText, { marginVertical: 24 }]}>
-						New from friends
-					</Text>
-					<MovieFriendScroll FriendsRating={EnhancedFriendsData} />
+		<>
+			<ScrollView
+				style={RootStyles.container}
+				contentContainerStyle={{ paddingBottom: 32 }}
+			>
+				<View style={{ flexDirection: "column", gap: 16 }}>
+					<HeaderMovie header='Popular this week' />
+					<View style={{ paddingLeft: 16 }}>
+						<Text style={[RootStyles.headText, { marginVertical: 24 }]}>
+							New from friends
+						</Text>
+						<MovieFriendScroll FriendsRating={EnhancedFriendsData} />
+					</View>
+					<HeaderMovie header='Popular with friends' />
 				</View>
-				<HeaderMovie header='Popular with friends' />
-			</View>
-		</ScrollView>
+			</ScrollView>
+			<DiaryButton />
+		</>
 	);
 };
 

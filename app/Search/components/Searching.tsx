@@ -13,7 +13,7 @@ const TabScreen = ({ title }: { title: string }) => (
 			backgroundColor: "#14171C",
 		}}
 	>
-		<Text>{title}</Text>
+		{/* <Text>{title}</Text> */}
 	</View>
 );
 

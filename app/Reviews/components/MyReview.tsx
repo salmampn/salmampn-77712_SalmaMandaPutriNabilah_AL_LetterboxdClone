@@ -13,6 +13,7 @@ const MyReview = ({
 	rewatch,
 	imageSource,
 	style,
+	movie,
 }) => {
 	return (
 		<View>
@@ -44,6 +45,7 @@ const MyReview = ({
 						imageSource={imageSource}
 						width={125}
 						height={180}
+						movie={movie}
 					/>
 					<View style={styles.reviewTextWrapper}>
 						<Text style={{ color: "lightgray", fontSize: 16 }}>{review}</Text>

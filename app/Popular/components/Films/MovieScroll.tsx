@@ -14,6 +14,7 @@ const MovieScroll = () => {
 				<MovieCard
 					key={index}
 					imageSource={movie.src}
+					movie={movie}
 				/>
 			))}
 		</ScrollView>

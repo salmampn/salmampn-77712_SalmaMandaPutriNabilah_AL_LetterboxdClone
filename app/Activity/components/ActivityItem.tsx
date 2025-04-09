@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, useWindowDimensions } from "react-native";
 import Avatar from "../../../components/Avatar";
 import RootStyles from "../../../Style";
 import { format, formatDistanceToNow } from "date-fns";
@@ -7,6 +7,7 @@ import profiles from "../../../data/profiles";
 import movies from "../../../data/movies";
 
 const ActivityItem = ({ user, activity }) => {
+	const { width } = useWindowDimensions();
 	const userProfile = profiles.find((u) => u.key === user);
 	const movie = movies.find((m) => m.key === activity.movieKey);
 	const followedProfile = profiles.find((u) => u.key === activity.followedKey);
@@ -123,7 +124,7 @@ const ActivityItem = ({ user, activity }) => {
 	}
 
 	return (
-		<View style={styles.container}>
+		<View style={[styles.container, { maxWidth: width - 32 }]}>
 			<View style={styles.rowGap}>
 				<Avatar
 					imageSource={userProfile?.image}
@@ -132,8 +133,14 @@ const ActivityItem = ({ user, activity }) => {
 					borderRadius={20}
 					style={{ marginTop: 4 }}
 				/>
-				<View style={styles.textContainer}>
-					<Text style={[RootStyles.text, styles.messageText]}>{message}</Text>
+				<View style={[styles.textContainer, { maxWidth: width * 0.75 }]}>
+					<Text
+						style={[RootStyles.text, styles.messageText]}
+						numberOfLines={2}
+						ellipsizeMode='tail'
+					>
+						{message}
+					</Text>
 					{subtitle}
 				</View>
 			</View>
@@ -201,11 +208,11 @@ const styles = StyleSheet.create({
 	reviewThoughts: {
 		fontSize: 16,
 	},
-	messageText: {
-		fontSize: 16,
-	},
 	timestamp: {
 		color: "#556677",
+	},
+	messageText: {
+		fontSize: 16,
 	},
 	oneLine: {
 		flexShrink: 1,

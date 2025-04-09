@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity, Text } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -24,11 +24,22 @@ import Reviews from "./app/Reviews/Reviews";
 import Activity from "./app/Activity/Activity";
 import Settings from "./app/Settings/Settings";
 import SignOut from "./app/SignOut";
+import MovieDetailScreen from "./components/MovieDetailScreen";
 
 const Stack = createNativeStackNavigator();
 const HEADER_STYLE = {
 	headerStyle: { backgroundColor: "#2C343F" },
 	headerTintColor: "#fff",
+};
+const HEADER_DETAIL_STYLE = {
+	headerStyle: {
+		backgroundColor: "transparent",
+		elevation: 0,
+		shadowOpacity: 0,
+	},
+	headerTintColor: "#fff",
+	headerTitle: "",
+	headerTransparent: true,
 };
 
 const IconButton = ({ icon: IconComponent, onPress }) => (
@@ -95,6 +106,13 @@ export default function App() {
 					component={Profile}
 					options={{
 						animation: "slide_from_bottom",
+						headerTitle: () => (
+							<Text
+								style={{ fontSize: 18, color: "white", fontWeight: "bold" }}
+							>
+								sal
+							</Text>
+						),
 						headerRight: () => <IconButton icon={EllipsisVertical} />,
 						...HEADER_STYLE,
 					}}
@@ -135,6 +153,13 @@ export default function App() {
 					component={Reviews}
 					options={{
 						animation: "slide_from_bottom",
+						headerTitle: () => (
+							<Text
+								style={{ fontSize: 18, color: "white", fontWeight: "bold" }}
+							>
+								sal's Reviews
+							</Text>
+						),
 						headerRight: () => <IconButton icon={ListFilter} />,
 						...HEADER_STYLE,
 					}}
@@ -168,6 +193,14 @@ export default function App() {
 					options={{
 						animation: "slide_from_bottom",
 						...HEADER_STYLE,
+					}}
+				/>
+				<Stack.Screen
+					name='MovieDetail'
+					component={MovieDetailScreen}
+					options={{
+						animation: "slide_from_bottom",
+						...HEADER_DETAIL_STYLE,
 					}}
 				/>
 			</Stack.Navigator>

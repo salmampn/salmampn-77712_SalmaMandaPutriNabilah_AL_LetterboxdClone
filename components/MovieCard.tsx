@@ -1,14 +1,21 @@
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const MovieCard = ({ imageSource, width = 125, height = 185 }) => {
+const MovieCard = ({ imageSource, width = 125, height = 185, movie }) => {
+	const navigation = useNavigation();
+
 	return (
-		<View style={[styles.card, { width, height }]}>
-			<Image
-				source={imageSource}
-				style={styles.poster}
-				resizeMode='cover'
-			/>
-		</View>
+		<TouchableOpacity
+			onPress={() => navigation.navigate("MovieDetail", { movie })}
+		>
+			<View style={[styles.card, { width, height }]}>
+				<Image
+					source={imageSource}
+					style={styles.poster}
+					resizeMode='cover'
+				/>
+			</View>
+		</TouchableOpacity>
 	);
 };
 

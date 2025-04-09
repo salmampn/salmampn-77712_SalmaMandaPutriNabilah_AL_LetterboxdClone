@@ -1,11 +1,12 @@
 import { ScrollView, Text, View } from "react-native";
 import RootStyles from "../../Style";
-import activity from "../../data/activity";
+import activityData from "../../data/activity";
 import MyReview from "./components/MyReview";
 import movies from "../../data/movies";
 
 const Reviews = () => {
-	const userActivity = activity.find((u) => u.key === "sal");
+	const userActivity = activityData.find((u) => u.profileKey === "sal");
+	console.log(userActivity);
 	const reviewsOnly = userActivity?.activity.filter((item) => item.review);
 
 	return (
@@ -28,6 +29,7 @@ const Reviews = () => {
 						likes={review.likes}
 						rewatch={review.rewatch}
 						style={{}}
+						movie={movie}
 					/>
 				);
 			})}

@@ -57,17 +57,6 @@ const activityData = [
 				time: "2024-12-05T12:00:00Z",
 			},
 			{
-				movieKey: "msperegrine",
-				stars: 4.5,
-				likes: false,
-				rewatch: false,
-				watchlist: false,
-				review: true,
-				thoughts:
-					"An imaginative and visually captivating film. The characters are unique and memorable!",
-				time: "2024-12-06T14:00:00Z",
-			},
-			{
 				movieKey: "thebatman",
 				stars: 3.5,
 				likes: false,
