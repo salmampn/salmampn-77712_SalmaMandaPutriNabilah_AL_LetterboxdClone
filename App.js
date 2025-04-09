@@ -8,9 +8,16 @@ import SearchPage from "./app/Search";
 import Searching from "./app/components/Search/Searching";
 import SearchBar from "./app/components/Search/SearchBar";
 
-import { EllipsisVertical, Search } from "lucide-react-native";
+import {
+	EllipsisVertical,
+	GalleryHorizontal,
+	ListFilter,
+	Search,
+	Watch,
+} from "lucide-react-native";
 import DrawerNavigation from "./components/DrawerNavigation";
 import Profile from "./app/Profile";
+import Watchlist from "./app/Watchlist";
 
 const Stack = createNativeStackNavigator();
 
@@ -76,6 +83,31 @@ export default function App() {
 									color='#ffffff'
 								/>
 							</TouchableOpacity>
+						),
+						headerStyle: { backgroundColor: "#2C343F" },
+						headerTintColor: "#fff",
+					})}
+				/>
+				<Stack.Screen
+					name='Watchlist'
+					component={Watchlist}
+					options={({ navigation }) => ({
+						animation: "slide_from_bottom",
+						headerRight: () => (
+							<View style={{ flexDirection: "row", gap: 4 }}>
+								<TouchableOpacity style={{ marginRight: 10 }}>
+									<GalleryHorizontal
+										size={24}
+										color='#ffffff'
+									/>
+								</TouchableOpacity>
+								<TouchableOpacity style={{ marginRight: 10 }}>
+									<ListFilter
+										size={24}
+										color='#ffffff'
+									/>
+								</TouchableOpacity>
+							</View>
 						),
 						headerStyle: { backgroundColor: "#2C343F" },
 						headerTintColor: "#fff",
