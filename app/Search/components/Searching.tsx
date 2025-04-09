@@ -21,7 +21,7 @@ const Searching = () => {
 	const tabBarOptions = {
 		tabBarScrollEnabled: true,
 		tabBarPressColor: "#ffffff44",
-		tabBarPressOpacity: 0.8, // Ensures touch feedback
+		tabBarPressOpacity: 0.8,
 		tabBarActiveTintColor: "#ffffff",
 		tabBarInactiveTintColor: "#ffffff",
 		tabBarLabelStyle: {
@@ -32,7 +32,7 @@ const Searching = () => {
 			alignSelf: "flex-start",
 		},
 		tabBarItemStyle: { width: "auto" },
-		tabBarStyle: { backgroundColor: "#14171C" },
+		tabBarStyle: { backgroundColor: "#2C343F" },
 		tabBarIndicatorStyle: { backgroundColor: "#00E054", height: 3 },
 	};
 
