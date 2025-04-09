@@ -7,20 +7,21 @@ import Avatar from "../Avatar";
 import RootStyles from "../../../Style";
 import renderStars from "../RenderStars";
 import movies from "../../../data/movies";
+import friends from "../../../data/FriendsRating";
 
-const MovieFriendScroll = ({ friends }) => {
+const MovieFriendScroll = ({ FriendsRating }) => {
 	return (
 		<ScrollView
 			horizontal
 			showsHorizontalScrollIndicator={false}
 			contentContainerStyle={styles.scrollContainer}
 		>
-			{friends.map((friend, index) => {
-				const movie = movies.find((m) => m.key === friend.movieKey);
+			{FriendsRating.map((rating, index) => {
+				const movie = movies.find((m) => m.key === rating.movieKey);
 				return (
 					<FriendMovieCard
 						key={index}
-						friend={friend}
+						friend={rating}
 						moviePoster={movie?.src}
 					/>
 				);

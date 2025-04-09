@@ -1,6 +1,5 @@
 const profile = [
 	{
-		id: 1,
 		givenName: "Sal",
 		familyName: "",
 		username: "salmonteea",
