@@ -5,10 +5,10 @@ import ProfileFavorites from "./components/ProfileFavorites";
 import MyRecentActivity from "./components/MyRecentActivity";
 import RatingGraph from "./components/RatingGraph";
 import Statistics from "./components/Statistics";
-import MyData from "../../data/MyData";
+import profiles from "../../data/profiles";
 
 const Profile = () => {
-	const user = MyData[0];
+	const user = profiles[0];
 
 	return (
 		<ScrollView
@@ -19,7 +19,7 @@ const Profile = () => {
 			{/* Profile Header */}
 			<View style={styles.centeredSection}>
 				<Avatar
-					imageSource={user.pic}
+					imageSource={user.image}
 					width={90}
 					height={90}
 					borderRadius={60}

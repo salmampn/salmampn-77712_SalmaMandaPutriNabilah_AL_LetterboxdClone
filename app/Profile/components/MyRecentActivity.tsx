@@ -20,7 +20,7 @@ const MyRecentActivity = () => {
 	const cardHeight = (cardWidth / 90) * 130;
 
 	const userActivity = activity
-		.find((u) => u.key === "sal")
+		.find((u) => u.profileKey === "sal")
 		?.activity.slice(0, 4);
 
 	return (

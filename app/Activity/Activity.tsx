@@ -1,10 +1,6 @@
-import { Text, View } from "react-native";
+import ActivityTabs from "./components/Navigation/ActivityTabs";
 
 const Activity = () => {
-	return (
-		<View>
-			<Text>Activity</Text>
-		</View>
-	);
+	return <ActivityTabs />;
 };
 export default Activity;

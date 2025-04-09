@@ -1,5 +1,13 @@
 const profiles = [
 	{
+		key: "sal",
+		givenName: "sal",
+		familyName: "",
+		username: "salmonteea",
+		bio: "tiramisu cake.",
+		image: require("../assets/avatar.png"),
+	},
+	{
 		key: "alex",
 		givenName: "Alex",
 		familyName: "",

@@ -1,6 +1,6 @@
 import { Star, StarHalf } from "lucide-react-native";
 
-const renderStars = (rating, { color = "limegreen" }) => {
+const renderStars = (rating, { color = "limegreen" }, starSize = 8) => {
 	const fullStars = Math.floor(rating);
 	const hasHalfStar = rating % 1 !== 0;
 	const stars = [];
@@ -11,7 +11,7 @@ const renderStars = (rating, { color = "limegreen" }) => {
 				key={`full-${i}`}
 				color={`${color}`}
 				fill={`${color}`}
-				size={8}
+				size={starSize}
 			/>
 		);
 	}
@@ -22,7 +22,7 @@ const renderStars = (rating, { color = "limegreen" }) => {
 				key='half'
 				color={`${color}`}
 				fill={`${color}`}
-				size={8}
+				size={starSize}
 			/>
 		);
 	}

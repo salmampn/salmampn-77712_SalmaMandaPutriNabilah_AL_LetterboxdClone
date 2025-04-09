@@ -1,15 +1,15 @@
 const favorites = [
 	{
-		movieKey: "showman",
-	},
-	{
 		movieKey: "up",
 	},
 	{
-		movieKey: "lalaland",
+		movieKey: "showman",
 	},
 	{
-		movieKey: "dune",
+		movieKey: "knivesout",
+	},
+	{
+		movieKey: "msperegrine",
 	},
 ];
 
