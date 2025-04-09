@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, ScrollView } from "react-native";
 import RootStyles from "../../Style";
 import Avatar from "../../components/Avatar";
 import ProfileFavorites from "./components/ProfileFavorites";
-import MovieRatings from "./components/MovieRatings";
+import MyRecentActivity from "./components/MyRecentActivity";
 import RatingGraph from "./components/RatingGraph";
 import Statistics from "./components/Statistics";
 import MyData from "../../data/MyData";
@@ -39,7 +39,7 @@ const Profile = () => {
 			{/* Recent Activity */}
 			<View style={styles.section}>
 				<Text style={styles.sectionTitle}>RECENT ACTIVITY</Text>
-				<MovieRatings />
+				<MyRecentActivity />
 			</View>
 
 			<Text style={styles.moreActivityText}>More activity</Text>

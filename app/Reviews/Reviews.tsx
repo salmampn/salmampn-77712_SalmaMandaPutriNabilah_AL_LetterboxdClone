@@ -1,16 +1,18 @@
 import { ScrollView, Text, View } from "react-native";
 import RootStyles from "../../Style";
-import MyActivity from "../../data/MyActivity";
+import activity from "../../data/activity";
 import MyReview from "./components/MyReview";
 import movies from "../../data/movies";
 
 const Reviews = () => {
-	const userActivity = MyActivity.find((u) => u.key === "sal");
+	const userActivity = activity.find((u) => u.key === "sal");
 	const reviewsOnly = userActivity?.activity.filter((item) => item.review);
 
 	return (
 		<ScrollView
-			style={[RootStyles.container, { paddingTop: 16, paddingBottom: 100 }]}
+			style={RootStyles.container}
+			contentContainerStyle={{ paddingBottom: 100 }}
+			showsVerticalScrollIndicator={true}
 		>
 			{reviewsOnly?.map((review, idx) => {
 				const movie = movies.find((m) => m.key === review.movieKey);

@@ -50,7 +50,10 @@ const Reviews = () => {
 	};
 
 	return (
-		<ScrollView style={RootStyles.container}>
+		<ScrollView
+			style={RootStyles.container}
+			contentContainerStyle={{ paddingBottom: 16 }}
+		>
 			{newFromFriends.length > 0 && (
 				<>
 					<Text style={[RootStyles.headText, { paddingHorizontal: 16 }]}>
