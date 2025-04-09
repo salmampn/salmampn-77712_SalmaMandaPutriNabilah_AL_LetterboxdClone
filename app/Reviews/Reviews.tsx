@@ -6,7 +6,6 @@ import movies from "../../data/movies";
 
 const Reviews = () => {
 	const userActivity = activityData.find((u) => u.profileKey === "sal");
-	console.log(userActivity);
 	const reviewsOnly = userActivity?.activity.filter((item) => item.review);
 
 	return (
@@ -24,12 +23,13 @@ const Reviews = () => {
 						title={movie?.title}
 						year={movie?.year}
 						imageSource={movie?.src}
-						review={review.thoughts}
+						thoughts={review.thoughts}
 						stars={review.stars}
 						likes={review.likes}
 						rewatch={review.rewatch}
 						style={{}}
 						movie={movie}
+						time={review.time}
 					/>
 				);
 			})}

@@ -1,9 +1,10 @@
-import { Text, ScrollView, View } from "react-native";
+import { Text, ScrollView, View, TouchableOpacity } from "react-native";
 import FrontReview from "./Reviews/FrontReview";
 import RootStyles from "../../../Style";
 import reviews from "../../../data/reviews";
 import movies from "../../../data/movies";
 import profiles from "../../../data/profiles";
+import { useNavigation } from "@react-navigation/native";
 
 const getReviewCounts = (reviews) => {
 	const counts = {};
@@ -24,6 +25,8 @@ const Reviews = () => {
 	const popularWithFriends = reviews.filter((r) => r.comments);
 	const popularThisWeek = reviews.filter((r) => reviewCounts[r.movieKey] > 1);
 
+	const navigation = useNavigation();
+
 	const renderReviews = (data, type) => {
 		return data.map((r, i) => {
 			const movie = findMovie(r.movieKey);
@@ -32,19 +35,29 @@ const Reviews = () => {
 			if (!movie || !profile) return null;
 
 			return (
-				<FrontReview
-					key={`${type}-${i}`}
-					title={movie.title}
-					year={movie.year}
-					name={profile.givenName}
-					review={r.thoughts}
-					stars={r.rating}
-					likes={r.likes}
-					rewatch={r.rewatch}
-					imageSource={movie?.src}
-					profilePic={profile.image}
-					style={{}}
-				/>
+				<TouchableOpacity
+					onPress={() =>
+						navigation.navigate("ReviewDetail", {
+							movie,
+							profile,
+							review: r,
+						})
+					}
+				>
+					<FrontReview
+						key={`${type}-${i}`}
+						title={movie.title}
+						year={movie.year}
+						name={profile.givenName}
+						review={r.thoughts}
+						stars={r.rating}
+						likes={r.likes}
+						rewatch={r.rewatch}
+						imageSource={movie?.src}
+						profilePic={profile.image}
+						style={{}}
+					/>
+				</TouchableOpacity>
 			);
 		});
 	};

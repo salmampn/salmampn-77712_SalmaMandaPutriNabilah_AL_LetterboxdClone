@@ -11,8 +11,9 @@ const reviews = [
 		comments: {
 			profileKey: "jenny",
 			thoughts: "I agree! The cinematography was stunning.",
-			time: "2023-10-01T12:00:00Z",
+			time: "2025-4-01T12:00:00Z",
 		},
+		time: "2025-3-029T10:00:00Z",
 	},
 	{
 		profileKey: "jenny",
@@ -23,6 +24,7 @@ const reviews = [
 		thoughts: "A fun and entertaining movie with great music.",
 		movieKey: "showman",
 		friend: true,
+		time: "2025-4-06T11:00:00Z",
 	},
 	{
 		profileKey: "sam",
@@ -33,6 +35,7 @@ const reviews = [
 		thoughts: "",
 		movieKey: "lalaland",
 		friend: true,
+		time: "2025-4-04T12:30:00Z",
 	},
 	{
 		profileKey: "taylor",
@@ -43,6 +46,7 @@ const reviews = [
 		thoughts: "The plot was weak and the characters were one-dimensional.",
 		movieKey: "us",
 		friend: false,
+		time: "2025-4-01T13:00:00Z",
 	},
 	{
 		profileKey: "james",
@@ -53,6 +57,7 @@ const reviews = [
 		thoughts: "",
 		movieKey: "up",
 		friend: false,
+		time: "2025-3-28:00:00Z",
 	},
 	{
 		profileKey: "michael",
@@ -63,6 +68,7 @@ const reviews = [
 		thoughts: "A heartwarming story with great character development.",
 		movieKey: "showman",
 		friend: false,
+		time: "2025-2-28T15:00:00Z",
 	},
 ];
 

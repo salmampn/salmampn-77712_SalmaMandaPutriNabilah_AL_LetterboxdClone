@@ -21,6 +21,7 @@ const MovieFriendScroll = ({ FriendsRating }) => {
 						key={index}
 						friend={rating}
 						moviePoster={movie?.src}
+						movie={movie}
 					/>
 				);
 			})}
@@ -28,10 +29,13 @@ const MovieFriendScroll = ({ FriendsRating }) => {
 	);
 };
 
-const FriendMovieCard = ({ friend, moviePoster }) => {
+const FriendMovieCard = ({ friend, moviePoster, movie }) => {
 	return (
 		<View style={styles.cardWrapper}>
-			<MovieCard imageSource={moviePoster} />
+			<MovieCard
+				imageSource={moviePoster}
+				movie={movie}
+			/>
 			<View style={styles.footer}>
 				<Avatar
 					width={25}

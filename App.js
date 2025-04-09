@@ -25,6 +25,7 @@ import Activity from "./app/Activity/Activity";
 import Settings from "./app/Settings/Settings";
 import SignOut from "./app/SignOut";
 import MovieDetailScreen from "./components/MovieDetailScreen";
+import ReviewDetail from "./components/ReviewDetail";
 
 const Stack = createNativeStackNavigator();
 const HEADER_STYLE = {
@@ -198,6 +199,14 @@ export default function App() {
 				<Stack.Screen
 					name='MovieDetail'
 					component={MovieDetailScreen}
+					options={{
+						animation: "slide_from_bottom",
+						...HEADER_DETAIL_STYLE,
+					}}
+				/>
+				<Stack.Screen
+					name='ReviewDetail'
+					component={ReviewDetail}
 					options={{
 						animation: "slide_from_bottom",
 						...HEADER_DETAIL_STYLE,

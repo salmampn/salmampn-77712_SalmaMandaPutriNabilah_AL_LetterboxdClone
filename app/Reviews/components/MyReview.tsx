@@ -1,57 +1,82 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import MovieCard from "../../../components/MovieCard";
 import { RefreshCw, Heart } from "lucide-react-native";
 import RootStyles from "../../../Style";
 import renderStars from "../../../components/RenderStars";
+import { useNavigation } from "@react-navigation/native";
+import profiles from "../../../data/profiles";
 
 const MyReview = ({
 	title,
 	year,
-	review,
+	thoughts,
 	stars,
 	likes,
 	rewatch,
 	imageSource,
 	style,
 	movie,
+	time,
 }) => {
+	const navigation = useNavigation();
+
+	const profile = profiles.find((p) => p.key === "sal");
+
 	return (
 		<View>
-			<View style={[styles.container, style]}>
-				<View style={styles.header}>
-					<View style={styles.titleYearContainer}>
-						<Text style={styles.title}>{title}</Text>
-						<Text style={styles.year}>{year}</Text>
+			<TouchableOpacity
+				onPress={() =>
+					navigation.navigate("ReviewDetail", {
+						movie,
+						profile,
+						review: {
+							thoughts,
+							stars,
+							likes,
+							rewatch,
+							time,
+						},
+					})
+				}
+			>
+				<View style={[styles.container, style]}>
+					<View style={styles.header}>
+						<View style={styles.titleYearContainer}>
+							<Text style={styles.title}>{title}</Text>
+							<Text style={styles.year}>{year}</Text>
+						</View>
+					</View>
+					<View style={styles.ratingRow}>
+						<View style={styles.stars}>{renderStars(stars, {})}</View>
+						{likes && (
+							<Heart
+								color='#F27405'
+								size={10}
+								fill='#F27405'
+							/>
+						)}
+						{rewatch && (
+							<RefreshCw
+								color='gray'
+								size={10}
+							/>
+						)}
+					</View>
+					<View style={styles.reviewRow}>
+						<MovieCard
+							imageSource={imageSource}
+							width={125}
+							height={180}
+							movie={movie}
+						/>
+						<View style={styles.reviewTextWrapper}>
+							<Text style={{ color: "lightgray", fontSize: 16 }}>
+								{thoughts}
+							</Text>
+						</View>
 					</View>
 				</View>
-				<View style={styles.ratingRow}>
-					<View style={styles.stars}>{renderStars(stars, {})}</View>
-					{likes && (
-						<Heart
-							color='#F27405'
-							size={10}
-							fill='#F27405'
-						/>
-					)}
-					{rewatch && (
-						<RefreshCw
-							color='gray'
-							size={10}
-						/>
-					)}
-				</View>
-				<View style={styles.reviewRow}>
-					<MovieCard
-						imageSource={imageSource}
-						width={125}
-						height={180}
-						movie={movie}
-					/>
-					<View style={styles.reviewTextWrapper}>
-						<Text style={{ color: "lightgray", fontSize: 16 }}>{review}</Text>
-					</View>
-				</View>
-			</View>
+			</TouchableOpacity>
 			<View style={[RootStyles.divider, { marginBottom: 16 }]} />
 		</View>
 	);
