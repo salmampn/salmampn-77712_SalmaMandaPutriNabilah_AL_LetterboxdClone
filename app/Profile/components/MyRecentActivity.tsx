@@ -4,9 +4,9 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { RefreshCw, Text as LucideText } from "lucide-react-native";
 import renderStars from "../../../components/RenderStars";
 import movies from "../../../data/movies";
-import MyActivity from "../../../data/MyActivity";
+import activity from "../../../data/activity";
 
-const MovieRatings = () => {
+const MyRecentActivity = () => {
 	const screenWidth = Dimensions.get("window").width;
 	const containerPadding = 4;
 	const containerWidth = screenWidth - containerPadding * 2;
@@ -19,57 +19,57 @@ const MovieRatings = () => {
 	const cardWidth = availableWidth / cardsPerRow;
 	const cardHeight = (cardWidth / 90) * 130;
 
+	const userActivity = activity
+		.find((u) => u.key === "sal")
+		?.activity.slice(0, 4);
+
 	return (
 		<View style={[styles.container]}>
-			{MyActivity.map((activity, index) => {
-				const movie = movies.find((m) => m.key === activity.movieKey);
+			{userActivity.map((activityItem, index) => {
+				const movie = movies.find((m) => m.key === activityItem.movieKey);
 				return (
 					<View key={index}>
-						<View>
-							<MovieCard
-								key={index}
-								imageSource={movie?.src}
-								width={cardWidth}
-								height={cardHeight}
-							/>
-							<View style={styles.footer}>
-								<View style={styles.info}>
-									<View style={styles.iconRow}>
-										<View style={styles.stars}>
-											{renderStars(activity.stars, {})}
-										</View>
-										{activity.likes && (
-											<Icon
-												name='heart'
-												color='#F27405'
-												size={10}
-											/>
-										)}
-										{activity.rewatch && (
-											<RefreshCw
-												color='gray'
-												size={10}
-											/>
-										)}
-										{activity.review && (
-											<LucideText
-												color='white'
-												size={10}
-											/>
-										)}
+						<MovieCard
+							imageSource={movie?.src}
+							width={cardWidth}
+							height={cardHeight}
+						/>
+						<View style={styles.footer}>
+							<View style={styles.info}>
+								<View style={styles.iconRow}>
+									<View style={styles.stars}>
+										{renderStars(activityItem.stars, {})}
 									</View>
+									{activityItem.likes && (
+										<Icon
+											name='heart'
+											color='#F27405'
+											size={10}
+										/>
+									)}
+									{activityItem.rewatch && (
+										<RefreshCw
+											color='gray'
+											size={10}
+										/>
+									)}
+									{activityItem.review && (
+										<LucideText
+											color='white'
+											size={10}
+										/>
+									)}
 								</View>
 							</View>
 						</View>
 					</View>
 				);
 			})}
-			;
 		</View>
 	);
 };
 
-export default MovieRatings;
+export default MyRecentActivity;
 
 const styles = StyleSheet.create({
 	container: {

@@ -1,4 +1,4 @@
-const MyActivity = [
+const activity = [
 	{
 		key: "sal",
 		activity: [
@@ -45,8 +45,24 @@ const MyActivity = [
 				thoughts:
 					"A mind-bending thriller that keeps you on the edge of your seat. Nolan at his best!",
 			},
+			{
+				movieKey: "msperegrine",
+				stars: 4.5,
+				likes: false,
+				rewatch: false,
+				review: true,
+				thoughts:
+					"An imaginative and visually captivating film. The characters are unique and memorable!",
+			},
+			{
+				movieKey: "thebatman",
+				stars: 3,
+				likes: false,
+				rewatch: false,
+				review: false,
+			},
 		],
 	},
 ];
 
-export default MyActivity;
+export default activity;

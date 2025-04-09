@@ -4,7 +4,7 @@ const RootStyles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: "#14181c",
-		paddingVertical: 16,
+		paddingTop: 16,
 	},
 	headText: {
 		color: "white",
