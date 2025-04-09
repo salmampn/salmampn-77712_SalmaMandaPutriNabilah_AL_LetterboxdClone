@@ -3,7 +3,7 @@ import { Text } from "react-native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import Films from "../Films";
 import Reviews from "../PopularReviews";
-import Lists from "../Lists";
+import Lists from "../PopularLists";
 import Journal from "../Journal";
 
 const Tab = createMaterialTopTabNavigator();

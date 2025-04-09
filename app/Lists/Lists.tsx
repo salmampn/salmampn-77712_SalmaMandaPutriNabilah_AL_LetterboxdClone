@@ -1,10 +1,10 @@
 import { Text, View } from "react-native";
 
-const Settings = () => {
+const Lists = () => {
 	return (
 		<View>
-			<Text>Settings</Text>
+			<Text>Lists</Text>
 		</View>
 	);
 };
-export default Settings;
+export default Lists;
