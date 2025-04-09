@@ -1,4 +1,5 @@
 import React from "react";
+import { Text } from "react-native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import Films from "../../Films";
 import Reviews from "../../Reviews";
@@ -6,6 +7,23 @@ import Lists from "../../Lists";
 import Journal from "../../Journal";
 
 const Tab = createMaterialTopTabNavigator();
+
+const TabLabel = ({ title }) => (
+	<Text
+		numberOfLines={1}
+		ellipsizeMode='tail'
+		allowFontScaling={false}
+		style={{
+			fontSize: 11,
+			color: "white",
+			letterSpacing: 2,
+			textTransform: "uppercase",
+			textAlign: "center",
+		}}
+	>
+		{title}
+	</Text>
+);
 
 const PopularTabs = () => {
 	return (
@@ -22,35 +40,29 @@ const PopularTabs = () => {
 					backgroundColor: "#00E054",
 					height: 3,
 				},
-				tabBarLabelStyle: {
-					fontSize: 12,
-					letterSpacing: 3,
-					textTransform: "uppercase",
-				},
-				tabBarItemStyle: {
-					width: "auto",
-				},
 				tabBarPressColor: "#ffffff44",
-				tabBarActiveTintColor: "#ffffff",
-				tabBarInactiveTintColor: "#ffffff",
 			}}
 			sceneContainerStyle={{ backgroundColor: "#14181c" }}
 		>
 			<Tab.Screen
 				name='FILMS'
 				component={Films}
+				options={{ tabBarLabel: () => <TabLabel title='FILMS' /> }}
 			/>
 			<Tab.Screen
 				name='REVIEWS'
 				component={Reviews}
+				options={{ tabBarLabel: () => <TabLabel title='REVIEWS' /> }}
 			/>
 			<Tab.Screen
 				name='LISTS'
 				component={Lists}
+				options={{ tabBarLabel: () => <TabLabel title='LISTS' /> }}
 			/>
 			<Tab.Screen
 				name='JOURNAL'
 				component={Journal}
+				options={{ tabBarLabel: () => <TabLabel title='JOURNAL' /> }}
 			/>
 		</Tab.Navigator>
 	);

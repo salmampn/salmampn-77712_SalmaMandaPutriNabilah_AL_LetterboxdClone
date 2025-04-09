@@ -1,13 +1,11 @@
 import React from "react";
 import { View, StyleSheet, Text, ScrollView } from "react-native";
 import MovieCard from "../MovieCard";
-import Icon from "react-native-vector-icons/FontAwesome";
-import { RefreshCw, Text as LucideText } from "lucide-react-native";
+import { RefreshCw, Text as LucideText, Heart } from "lucide-react-native";
 import Avatar from "../Avatar";
 import RootStyles from "../../../Style";
 import renderStars from "../RenderStars";
 import movies from "../../../data/movies";
-import friends from "../../../data/FriendsRating";
 
 const MovieFriendScroll = ({ FriendsRating }) => {
 	return (
@@ -44,12 +42,15 @@ const FriendMovieCard = ({ friend, moviePoster }) => {
 				<View style={styles.info}>
 					<Text style={RootStyles.text}>{friend.name}</Text>
 					<View style={styles.actions}>
-						<View style={styles.stars}>{renderStars(friend.rating)}</View>
+						<View style={styles.stars}>
+							{renderStars(friend.rating, { color: "white" })}
+						</View>
+
 						{friend.likes && (
-							<Icon
-								name='heart'
+							<Heart
 								color='#F27405'
 								size={10}
+								fill='#F27405'
 							/>
 						)}
 						{friend.rewatch && (
