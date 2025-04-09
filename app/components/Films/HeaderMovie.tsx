@@ -4,7 +4,7 @@ import RootStyles from "../../../Style";
 
 const HeaderMovie = ({ header }) => {
 	return (
-		<View style={{ paddingLeft: 16 }}>
+		<View style={{ paddingLeft: 16, marginRight: 4 }}>
 			<Text style={[RootStyles.headText, { marginVertical: 24 }]}>
 				{header}
 			</Text>

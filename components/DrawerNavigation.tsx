@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import {
 	createDrawerNavigator,
 	DrawerContentScrollView,
@@ -83,7 +83,7 @@ const CustomDrawerContent = (props) => {
 			</TouchableOpacity>
 			<TouchableOpacity
 				style={styles.drawerItem}
-				onPress={() => navigation.navigate("Search")}
+				onPress={() => navigation.navigate("Watchlist")}
 			>
 				<View style={{ flexDirection: "row", alignItems: "center" }}>
 					<Clock
@@ -216,6 +216,7 @@ const DrawerNavigation = () => {
 						<GalleryHorizontalEnd
 							size={24}
 							color='#fff'
+							fill='#fff'
 						/>
 					),
 				})}
