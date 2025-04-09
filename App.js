@@ -4,9 +4,9 @@ import { StatusBar } from "expo-status-bar";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 
-import SearchPage from "./app/Search";
-import Searching from "./components/Search/Searching";
-import SearchBar from "./components/Search/SearchBar";
+import SearchPage from "./app/Search/Search";
+import Searching from "./app/Search/components/Searching";
+import SearchBar from "./app/Search/components/SearchBar";
 
 import {
 	EllipsisVertical,
@@ -17,7 +17,7 @@ import {
 } from "lucide-react-native";
 import DrawerNavigation from "./components/DrawerNavigation";
 import Profile from "./app/Profile/Profile";
-import Watchlist from "./app/Watchlist";
+import Watchlist from "./app/Watchlist/Watchlist";
 
 const Stack = createNativeStackNavigator();
 

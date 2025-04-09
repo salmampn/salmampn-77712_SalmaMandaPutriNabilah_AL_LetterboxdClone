@@ -1,6 +1,6 @@
 import React from "react";
 import { ScrollView, View, Text, StyleSheet } from "react-native";
-import RootStyles from "../Style";
+import RootStyles from "../../Style";
 
 const SearchPage = () => {
 	const browseByOptions = [

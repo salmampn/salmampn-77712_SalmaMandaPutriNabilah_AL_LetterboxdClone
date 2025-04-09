@@ -1,7 +1,7 @@
 import React from "react";
 import { View, FlatList, Image, StyleSheet, Dimensions } from "react-native";
-import movies from "../data/movies";
-import RootStyles from "../Style";
+import movies from "../../data/movies";
+import RootStyles from "../../Style";
 
 const numColumns = 4;
 const posterWidth = Dimensions.get("window").width / numColumns - 3;

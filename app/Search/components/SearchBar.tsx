@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
 	input: {
 		flex: 1,
 		color: "#fff",
+		fontSize: 16,
 	},
 	clearButton: {
 		paddingLeft: 8,
