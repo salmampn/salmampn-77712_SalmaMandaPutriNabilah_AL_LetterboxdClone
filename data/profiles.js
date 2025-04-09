@@ -1,4 +1,4 @@
-const friends = [
+const profiles = [
 	{
 		key: "alex",
 		givenName: "Alex",
@@ -29,6 +29,12 @@ const friends = [
 		familyName: "",
 		image: { uri: "https://randomuser.me/api/portraits/men/12.jpg" },
 	},
+	{
+		key: "michael",
+		givenName: "Michael",
+		familyName: "",
+		image: { uri: "https://randomuser.me/api/portraits/men/15.jpg" },
+	},
 ];
 
-export default friends;
+export default profiles;

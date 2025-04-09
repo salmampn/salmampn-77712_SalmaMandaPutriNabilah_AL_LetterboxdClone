@@ -8,8 +8,7 @@ const styles = StyleSheet.create({
 	headText: {
 		color: "white",
 		fontWeight: "bold",
-		marginVertical: 14,
-		fontSize: 18,
+		fontSize: 20,
 	},
 	avatarContainer: {
 		alignItems: "center",
@@ -22,7 +21,6 @@ const styles = StyleSheet.create({
 		height: 1,
 		opacity: 0.4,
 		backgroundColor: "gray",
-		// marginVertical: 16,
 	},
 	text: {
 		color: "#99AABB",

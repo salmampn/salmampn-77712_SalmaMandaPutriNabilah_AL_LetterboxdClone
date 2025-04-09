@@ -1,16 +1,16 @@
-import Icon from "react-native-vector-icons/FontAwesome";
+import { Star, StarHalf } from "lucide-react-native";
 
-const renderStars = (rating) => {
+const renderStars = (rating, { color = "limegreen" }) => {
 	const fullStars = Math.floor(rating);
 	const hasHalfStar = rating % 1 !== 0;
 	const stars = [];
 
 	for (let i = 0; i < fullStars; i++) {
 		stars.push(
-			<Icon
+			<Star
 				key={`full-${i}`}
-				name='star'
-				color='white'
+				color={`${color}`}
+				fill={`${color}`}
 				size={8}
 			/>
 		);
@@ -18,10 +18,10 @@ const renderStars = (rating) => {
 
 	if (hasHalfStar) {
 		stars.push(
-			<Icon
+			<StarHalf
 				key='half'
-				name='star-half'
-				color='white'
+				color={`${color}`}
+				fill={`${color}`}
 				size={8}
 			/>
 		);

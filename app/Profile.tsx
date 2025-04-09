@@ -5,10 +5,10 @@ import ProfileFavorites from "./components/Profile/ProfileFavorites";
 import MovieRatings from "./components/Profile/MovieRatings";
 import RatingGraph from "./components/Profile/RatingGraph";
 import Statistics from "./components/Profile/Statistics";
-import profile from "../data/profile";
+import MyData from "../data/MyData";
 
 const Profile = () => {
-	const user = profile[0];
+	const user = MyData[0];
 
 	return (
 		<ScrollView

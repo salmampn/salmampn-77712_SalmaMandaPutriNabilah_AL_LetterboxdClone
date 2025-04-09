@@ -21,12 +21,14 @@ import {
 } from "lucide-react-native";
 import PopularTabs from "../app/components/Navigation/PopularTabs";
 import Avatar from "../app/components/Avatar";
+import MyData from "../data/MyData";
 
 const Drawer = createDrawerNavigator();
 
 // Custom Drawer Content
 const CustomDrawerContent = (props) => {
 	const navigation = useNavigation();
+	const user = MyData[0];
 
 	return (
 		<DrawerContentScrollView {...props}>
@@ -35,14 +37,21 @@ const CustomDrawerContent = (props) => {
 					flexDirection: "row",
 					alignItems: "center",
 					gap: 16,
+					marginVertical: 20,
 				}}
 			>
-				<Avatar />
+				<Avatar
+					imageSource={user.pic}
+					width={80}
+					height={80}
+					borderRadius={60}
+					style={{ marginBottom: 10 }}
+				/>
 				<View>
 					<Text style={{ color: "#fff", fontSize: 18, fontWeight: "bold" }}>
-						sal
+						{user.givenName}
 					</Text>
-					<Text style={{ color: "#fff", fontSize: 16 }}>salmonteea</Text>
+					<Text style={{ color: "#fff", fontSize: 16 }}>{user.username}</Text>
 				</View>
 			</View>
 

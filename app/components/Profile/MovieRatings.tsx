@@ -36,7 +36,7 @@ const MovieRatings = () => {
 								<View style={styles.info}>
 									<View style={styles.iconRow}>
 										<View style={styles.stars}>
-											{renderStars(activity.stars)}
+											{renderStars(activity.stars, {})}
 										</View>
 										{activity.likes && (
 											<Icon

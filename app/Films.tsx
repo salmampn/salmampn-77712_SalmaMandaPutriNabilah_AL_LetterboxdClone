@@ -1,20 +1,22 @@
 import React from "react";
 import { View, Text } from "react-native";
-import MovieFriendScroll from "./components/Films/MovieFriendScroll";
 import { ScrollView } from "react-native-gesture-handler";
+import MovieFriendScroll from "./components/Films/MovieFriendScroll";
 import RootStyles from "../Style";
 import HeaderMovie from "./components/Films/HeaderMovie";
-import FriendsRating from "../data/FriendsRating";
-import friends from "../data/friends";
+import reviews from "../data/reviews";
+import profiles from "../data/profiles";
 
-const EnhancedFriendsData = FriendsRating.map((rating) => {
-	const review = friends.find((r) => r.key === rating.friendKey);
-	return {
-		...rating,
-		name: review?.givenName || rating.friendKey,
-		image: review?.image,
-	};
-});
+const EnhancedFriendsData = reviews
+	.filter((review) => review.friend)
+	.map((review) => {
+		const profile = profiles.find((p) => p.key === review.profileKey);
+		return {
+			...review,
+			name: profile?.givenName || review.profileKey,
+			image: profile?.image,
+		};
+	});
 
 const Films = () => {
 	return (
@@ -25,7 +27,9 @@ const Films = () => {
 			<View style={{ flexDirection: "column", gap: 16 }}>
 				<HeaderMovie header='Popular this week' />
 				<View style={{ paddingLeft: 16 }}>
-					<Text style={RootStyles.headText}>New from friends</Text>
+					<Text style={[RootStyles.headText, { marginVertical: 24 }]}>
+						New from friends
+					</Text>
 					<MovieFriendScroll FriendsRating={EnhancedFriendsData} />
 				</View>
 				<HeaderMovie header='Popular with friends' />

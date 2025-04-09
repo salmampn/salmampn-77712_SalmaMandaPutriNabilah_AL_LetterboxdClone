@@ -1,6 +1,6 @@
-const profile = [
+const MyData = [
 	{
-		givenName: "Sal",
+		givenName: "sal",
 		familyName: "",
 		username: "salmonteea",
 		bio: "tiramisu cake.",
@@ -8,4 +8,4 @@ const profile = [
 	},
 ];
 
-export default profile;
+export default MyData;
