@@ -1,8 +1,8 @@
 import { View, Dimensions, StyleSheet } from "react-native";
-import MovieCard from "../MovieCard";
+import MovieCard from "../../../components/MovieCard";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { RefreshCw, Text as LucideText } from "lucide-react-native";
-import renderStars from "../RenderStars";
+import renderStars from "../../../components/RenderStars";
 import movies from "../../../data/movies";
 import MyActivity from "../../../data/MyActivity";
 

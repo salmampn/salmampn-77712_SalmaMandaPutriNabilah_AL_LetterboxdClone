@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
-import MovieCard from "../MovieCard";
+import MovieCard from "../../../../components/MovieCard";
 import { RefreshCw, Heart } from "lucide-react-native";
-import RootStyles from "../../../Style";
-import Avatar from "../Avatar";
-import renderStars from "../RenderStars";
+import RootStyles from "../../../../Style";
+import Avatar from "../../../../components/Avatar";
+import renderStars from "../../../../components/RenderStars";
 
 const FrontReview = ({
 	title,

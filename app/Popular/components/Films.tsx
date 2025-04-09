@@ -1,11 +1,11 @@
 import React from "react";
 import { View, Text } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import MovieFriendScroll from "./components/Films/MovieFriendScroll";
-import RootStyles from "../Style";
-import HeaderMovie from "./components/Films/HeaderMovie";
-import reviews from "../data/reviews";
-import profiles from "../data/profiles";
+import MovieFriendScroll from "./Films/MovieFriendScroll";
+import RootStyles from "../../../Style";
+import HeaderMovie from "./Films/HeaderMovie";
+import reviews from "../../../data/reviews";
+import profiles from "../../../data/profiles";
 
 const EnhancedFriendsData = reviews
 	.filter((review) => review.friend)

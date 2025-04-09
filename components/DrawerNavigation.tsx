@@ -19,8 +19,8 @@ import {
 	Settings,
 	LogOut,
 } from "lucide-react-native";
-import PopularTabs from "../app/components/Navigation/PopularTabs";
-import Avatar from "../app/components/Avatar";
+import PopularTabs from "../app/Popular/components/Navigation/PopularTabs";
+import Avatar from "./Avatar";
 import MyData from "../data/MyData";
 
 const Drawer = createDrawerNavigator();

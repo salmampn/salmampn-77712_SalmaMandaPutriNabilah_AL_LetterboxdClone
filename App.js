@@ -5,8 +5,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 
 import SearchPage from "./app/Search";
-import Searching from "./app/components/Search/Searching";
-import SearchBar from "./app/components/Search/SearchBar";
+import Searching from "./components/Search/Searching";
+import SearchBar from "./components/Search/SearchBar";
 
 import {
 	EllipsisVertical,
@@ -16,7 +16,7 @@ import {
 	Watch,
 } from "lucide-react-native";
 import DrawerNavigation from "./components/DrawerNavigation";
-import Profile from "./app/Profile";
+import Profile from "./app/Profile/Profile";
 import Watchlist from "./app/Watchlist";
 
 const Stack = createNativeStackNavigator();

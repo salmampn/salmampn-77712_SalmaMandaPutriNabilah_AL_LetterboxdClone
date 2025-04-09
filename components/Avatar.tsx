@@ -1,5 +1,5 @@
 import { View, Image } from "react-native";
-import RootStyles from "../../Style";
+import RootStyles from "../Style";
 
 const Avatar = ({
 	width = 80,

@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View, ScrollView } from "react-native";
-import RootStyles from "../Style";
-import Avatar from "./components/Avatar";
-import ProfileFavorites from "./components/Profile/ProfileFavorites";
-import MovieRatings from "./components/Profile/MovieRatings";
-import RatingGraph from "./components/Profile/RatingGraph";
-import Statistics from "./components/Profile/Statistics";
-import MyData from "../data/MyData";
+import RootStyles from "../../Style";
+import Avatar from "../../components/Avatar";
+import ProfileFavorites from "./components/ProfileFavorites";
+import MovieRatings from "./components/MovieRatings";
+import RatingGraph from "./components/RatingGraph";
+import Statistics from "./components/Statistics";
+import MyData from "../../data/MyData";
 
 const Profile = () => {
 	const user = MyData[0];

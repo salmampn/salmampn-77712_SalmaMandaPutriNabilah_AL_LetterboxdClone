@@ -1,11 +1,11 @@
 import React from "react";
 import { View, StyleSheet, Text, ScrollView } from "react-native";
-import MovieCard from "../MovieCard";
+import MovieCard from "../../../../components/MovieCard";
 import { RefreshCw, Text as LucideText, Heart } from "lucide-react-native";
-import Avatar from "../Avatar";
-import RootStyles from "../../../Style";
-import renderStars from "../RenderStars";
-import movies from "../../../data/movies";
+import Avatar from "../../../../components/Avatar";
+import RootStyles from "../../../../Style";
+import renderStars from "../../../../components/RenderStars";
+import movies from "../../../../data/movies";
 
 const MovieFriendScroll = ({ FriendsRating }) => {
 	return (

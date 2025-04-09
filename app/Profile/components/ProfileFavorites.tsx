@@ -1,5 +1,5 @@
 import { View, Dimensions, StyleSheet } from "react-native";
-import MovieCard from "../MovieCard";
+import MovieCard from "../../../components/MovieCard";
 import movies from "../../../data/movies";
 import favorites from "../../../data/favorites";
 

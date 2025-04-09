@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import MovieScroll from "./MovieScroll";
-import RootStyles from "../../../Style";
+import RootStyles from "../../../../Style";
 
 const HeaderMovie = ({ header }) => {
 	return (

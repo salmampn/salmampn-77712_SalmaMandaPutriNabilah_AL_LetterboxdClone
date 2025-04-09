@@ -1,7 +1,7 @@
 import React from "react";
 import { ScrollView } from "react-native-gesture-handler";
-import MovieCard from "../MovieCard";
-import movies from "../../../data/movies";
+import MovieCard from "../../../../components/MovieCard";
+import movies from "../../../../data/movies";
 
 const MovieScroll = () => {
 	return (
