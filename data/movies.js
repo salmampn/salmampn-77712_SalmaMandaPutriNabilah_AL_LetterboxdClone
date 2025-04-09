@@ -114,9 +114,9 @@ const movies = [
 		director: "Denis Villeneuve",
 		minutes: 180,
 		rating: 4.5,
-		catchphrase: "The end of a legend.",
+		catchphrase: "Long live the fighters.",
 		description:
-			"Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family. He must prevent a terrible future only he can foresee.",
+			"Follow the mythic journey of Paul Atreides as he unites with Chani and the Fremen while on a path of revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the known universe, Paul endeavors to prevent a terrible future only he can foresee.",
 		src: require("../assets/movie/dune2.jpg"),
 	},
 	{
@@ -128,7 +128,7 @@ const movies = [
 		rating: 4.8,
 		catchphrase: "Your mind is the scene of the crime.",
 		description:
-			"A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.",
+			"Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets is offered a chance to regain his old life as payment for a task considered to be impossible: “inception”, the implantation of another person's idea into a target's subconscious.",
 		src: require("../assets/movie/inception.jpg"),
 	},
 	{
@@ -140,7 +140,7 @@ const movies = [
 		rating: 3.7,
 		catchphrase: "Stay peculiar.",
 		description:
-			"When Jacob discovers clues to a mystery that spans alternate realities and times, he uncovers a secret refuge known as Miss Peregrine's Home for Peculiar Children. As Jacob explores his newfound abilities, he learns that danger lurks at every turn.",
+			"A teenager finds himself transported to an island where he must help protect a group of orphans with special powers from creatures intent on destroying them.",
 		src: require("../assets/movie/msperegrine.jpg"),
 	},
 	{
@@ -150,8 +150,9 @@ const movies = [
 		director: "Hayao Miyazaki",
 		minutes: 124,
 		rating: 4.6,
-		catchphrase: "A journey beyond imagination.",
-		description: "",
+		catchphrase: "On the other side of the tunnel was a mysterious town.",
+		description:
+			"A young girl, Chihiro, becomes trapped in a strange new world of spirits. When her parents undergo a mysterious transformation, she must call upon the courage she never knew she had to free her family.",
 		src: require("../assets/movie/spiritedaway.jpg"),
 	},
 	{
@@ -162,7 +163,8 @@ const movies = [
 		minutes: 155,
 		rating: 4.4,
 		catchphrase: "Unmask the truth.",
-		description: "",
+		description:
+			"In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.",
 		src: require("../assets/movie/thebatman.jpg"),
 	},
 	{
@@ -172,8 +174,9 @@ const movies = [
 		director: "James Wan",
 		minutes: 112,
 		rating: 4.0,
-		catchphrase: "The Conjuring",
-		description: "",
+		catchphrase: "Based on the true case files of the Warrens.",
+		description:
+			"Paranormal investigators Ed and Lorraine Warren work to help a family terrorized by a dark presence in their farmhouse. Forced to confront a powerful entity, the Warrens find themselves caught in the most terrifying case of their lives.",
 		src: require("../assets/movie/theconjuring.jpg"),
 	},
 	{
@@ -183,8 +186,9 @@ const movies = [
 		director: "Jon M. Chu",
 		minutes: 150,
 		rating: 4.3,
-		catchphrase: "The untold story of the witches of Oz.",
-		description: "",
+		catchphrase: "Everyone deserves the chance to fly.",
+		description:
+			"When ostracized and misunderstood green-skinned Elphaba is forced to share a room with the popular aristocrat Glinda, the two's unlikely friendship is tested as they begin to fulfill their respective destinies as Glinda the Good and the Wicked Witch of the West.",
 		src: require("../assets/movie/wicked.jpg"),
 	},
 	{
@@ -194,9 +198,23 @@ const movies = [
 		director: "Paul King",
 		minutes: 110,
 		rating: 4.2,
-		catchphrase: "The story begins.",
-		description: "",
+		catchphrase: "Every good thing in this world started with a dream.",
+		description:
+			"Willy Wonka - chock-full of ideas and determined to change the world one delectable bite at a time - is proof that the best things in life begin with a dream, and if you're lucky enough to meet Willy Wonka, anything is possible.",
 		src: require("../assets/movie/wonka.jpg"),
+	},
+	{
+		key: "walle",
+		title: "WALL-E",
+		year: 2008,
+		director: "Andrew Stanton",
+		minutes: 98,
+		rating: 4.4,
+		catchphrase:
+			"After 700 years of doing what he was built for, he'll discover what he was meant for.",
+		description:
+			"What if mankind had to leave Earth and somebody forgot to turn the last robot off? After hundreds of years doing what he was built for, WALL•E discovers a new purpose in life when he meets a sleek search robot named EVE. EVE comes to realize that WALL•E has inadvertently stumbled upon the key to the planet's future, and races back to space to report to the humans. Meanwhile, WALL•E chases EVE across the galaxy and sets into motion one of the most imaginative adventures ever brought to the big screen.",
+		src: require("../assets/movie/walle.jpg"),
 	},
 ];
 
